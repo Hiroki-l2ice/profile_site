@@ -39,5 +39,3 @@ st.write('e-mail: osawa.digital@gmail.com')
 
 st.write('>**技術**')
 st.write('**Python, Java, JavaScript, HTML, CSS, SQL**')
-
-st.write(yf.__version__)
