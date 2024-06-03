@@ -14,6 +14,7 @@ import streamlit as st
 from PIL import ImageDraw
 from PIL import ImageFont
 
+st.set_page_config(page_title='大沢広貴 物体検出アプリ', page_icon='🔍')
 
 st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')
@@ -21,8 +22,6 @@ st.sidebar.page_link("pages/una.py", label="ペット健康管理アプリ \"una
 st.sidebar.page_link("pages/StockPrice.py", label="株価可視化アプリ")
 st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
 st.sidebar.page_link("pages/SimilarMusic.py", label="類義曲検索アプリ")
-
-st.set_page_config(page_title='大沢広貴 物体検出アプリ', page_icon='🔎')
 
 KEY = st.secrets["KEY"]
 ENDPOINT = st.secrets['ENDPOINT']
