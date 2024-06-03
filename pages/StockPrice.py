@@ -14,6 +14,7 @@ st.sidebar.page_link("pages/StockPrice.py", label="株価可視化アプリ")
 st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
 st.sidebar.page_link("pages/SimilarMusic.py", label="類義曲検索アプリ")
 
+st.sidebar.write('---')
 st.sidebar.write("""
 ## 表示日数選択
 """)
