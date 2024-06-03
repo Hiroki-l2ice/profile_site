@@ -4,14 +4,12 @@ import numpy as np
 import datetime
 import altair as alt
 
-st.sidebar.page_link("app.py", label="**プロフィールに戻る**")
+st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')
 st.sidebar.page_link("pages/una.py", label="ペット健康管理アプリ \"una\"")
-st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
 st.sidebar.page_link("pages/StockPrice.py", label="株価可視化アプリ")
-st.sidebar.write('○○○アプリ')
-st.sidebar.write('○○○アプリ')
-st.sidebar.write('○○○アプリ')
+st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
+st.sidebar.page_link("pages/SimilarMusic.py", label="類義曲検索アプリ")
 
 st.sidebar.write('')
 st.sidebar.page_link('pages/una.py', label='**アルバム一覧に戻る**')

@@ -4,11 +4,10 @@ import streamlit as st
 st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')
 st.sidebar.page_link("pages/una.py", label="ペット健康管理アプリ \"una\"")
-st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
 st.sidebar.page_link("pages/StockPrice.py", label="株価可視化アプリ")
-st.sidebar.write('○○○アプリ')
-st.sidebar.write('○○○アプリ')
-st.sidebar.write('○○○アプリ')
+st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
+st.sidebar.page_link("pages/SimilarMusic.py", label="類義曲検索アプリ")
+
 
 st.header('プロフィール', divider='grey')
 
@@ -37,5 +36,8 @@ st.download_button(
 
 st.write('e-mail: osawa.digital@gmail.com')
 
-st.write('>**技術**')
-st.write('**Python, Java, JavaScript, HTML, CSS, SQL**')
+st.write('>**スキル**')
+st.write('''
+         **・Python :green[学習期間: 約2年半]  
+         ・Java / JavaScript / HTML / CSS / SQL :green[学習期間: 約1年]**
+         ''')
