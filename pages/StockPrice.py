@@ -14,15 +14,18 @@ st.sidebar.write('○○○アプリ')
 st.sidebar.write('○○○アプリ')
 
 st.sidebar.write("""
+# GAFA株価
+以下のオプションから表示日数を指定できます。
+""")
+
+st.sidebar.write("""
 ## 表示日数選択
 """)
 
 days = st.sidebar.slider('日数', 2, 500, 200)
 
-st.header('株価可視化アプリ', divider='grey')
-
 st.write(f"""
-### 過去 {days}日間 の株価
+### 過去 **{days}日間** のGAFA株価
 """)
 
 @st.cache_data
@@ -38,8 +41,6 @@ def get_data(days, tickers):
         hist.index.name = 'Name'
         df = pd.concat([df, hist])
     return df
-
-
 
 try: 
     st.sidebar.write("""
@@ -60,7 +61,7 @@ try:
     }
     df = get_data(days, tickers)
     companies = st.multiselect(
-        '企業を選択してください。',
+        '会社名を選択してください。',
         list(df.index),
         ['google', 'amazon', 'meta', 'apple']
     )
