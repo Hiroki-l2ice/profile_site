@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.set_page_config(page_title='大沢広貴 プロフィール', page_icon='👨‍💼')
 
 st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')

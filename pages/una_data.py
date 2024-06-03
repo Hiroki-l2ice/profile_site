@@ -4,6 +4,8 @@ import numpy as np
 import datetime
 import altair as alt
 
+st.set_page_config(page_title='大沢広貴 una', page_icon='🐕')
+
 st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')
 st.sidebar.page_link("pages/una.py", label="ペット健康管理アプリ \"una\"")

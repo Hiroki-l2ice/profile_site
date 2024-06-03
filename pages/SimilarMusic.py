@@ -3,6 +3,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import romkan
 
+st.set_page_config(page_title='大沢広貴 類似曲検索アプリ', page_icon='🎵')
 
 st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')

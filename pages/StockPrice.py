@@ -4,6 +4,8 @@ import altair as alt
 import streamlit as st
 from datetime import datetime, timedelta
 
+st.set_page_config(page_title='大沢広貴 株価可視化アプリ', page_icon='📈')
+
 
 st.sidebar.page_link("app.py", label="プロフィール")
 st.sidebar.write('# 制作物一覧')
