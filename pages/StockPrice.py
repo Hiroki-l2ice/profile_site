@@ -2,6 +2,7 @@ import pandas as pd
 import yfinance as yf
 import altair as alt
 import streamlit as st
+from datetime import datetime, timedelta
 
 
 st.sidebar.page_link("app.py", label="**プロフィールに戻る**")
@@ -12,11 +13,6 @@ st.sidebar.page_link("pages/StockPrice.py", label="株価可視化アプリ")
 st.sidebar.write('○○○アプリ')
 st.sidebar.write('○○○アプリ')
 st.sidebar.write('○○○アプリ')
-
-st.sidebar.write("""
-# GAFA株価
-以下のオプションから表示日数を指定できます。
-""")
 
 st.sidebar.write("""
 ## 表示日数選択
@@ -31,10 +27,12 @@ st.write(f"""
 @st.cache_data
 def get_data(days, tickers):
     df = pd.DataFrame()
+    end_date = datetime.today().strftime('%Y-%m-%d')
+    start_date = (datetime.today() - timedelta(days=days)).strftime('%Y-%m-%d')
     for company in tickers.keys():
         tkr = yf.Ticker(tickers[company])
-        hist = tkr.history(period=f'{days}d')
-        hist.index = hist.index.strftime('%d %B %Y')
+        hist = tkr.history(start=start_date, end=end_date)
+        hist.index = hist.index.strftime('%Y-%m-%d')
         hist = hist[['Close']]
         hist.columns = [company]
         hist = hist.T
@@ -48,7 +46,7 @@ try:
     """)
     ymin, ymax = st.sidebar.slider(
         '範囲を指定してください。',
-        0.0, 1000.0, (0.0, 700.0)
+        0.0, 1000.0, (0.0, 600.0)
     )
 
     tickers = {
@@ -71,7 +69,7 @@ try:
     else:
         data = df.loc[companies]
         st.write("### 株価 (USD)", data.sort_index())
-        data = data.T.reset_index()
+        data = data.T.reset_index().rename(columns={'index': 'Date'})
         data = pd.melt(data, id_vars=['Date']).rename(
             columns={'value': 'Stock Prices(USD)'}
         )
@@ -85,7 +83,7 @@ try:
             )
         )
         st.altair_chart(chart, use_container_width=True)
-except:
+except Exception as e:
     st.error(
         "おっと！なにかエラーが起きているようです。"
     )
