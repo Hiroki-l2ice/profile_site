@@ -13,8 +13,6 @@ st.sidebar.write('○○○アプリ')
 st.sidebar.write('○○○アプリ')
 st.sidebar.write('○○○アプリ')
 
-st.write(yf.__version__)
-
 st.sidebar.write("""
 # GAFA株価
 以下のオプションから表示日数を指定できます。
