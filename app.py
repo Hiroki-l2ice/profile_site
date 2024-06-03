@@ -40,13 +40,3 @@ st.write('e-mail: osawa.digital@gmail.com')
 st.write('>**技術**')
 st.write('**Python, Java, JavaScript, HTML, CSS, SQL**')
 
-
-
-# シークレットの値にアクセス
-key = st.secrets["KEY"]
-endpoint = st.secrets["ENDPOINT"]
-
-# シークレットの値を表示
-st.write(f'Key: {key}')
-st.write(f'Endpoint: {endpoint}')
-
