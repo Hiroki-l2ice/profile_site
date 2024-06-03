@@ -22,7 +22,7 @@ st.sidebar.page_link("pages/StockPrice.py", label="株価可視化アプリ")
 st.sidebar.page_link("pages/ObjectDetection.py", label="物体検出アプリ")
 st.sidebar.page_link("pages/SimilarMusic.py", label="類義曲検索アプリ")
 
-st.set_page_config(page_title='大沢広貴 物体検出アプリ', page_icon='🔍')
+st.set_page_config(page_title='大沢広貴 物体検出アプリ', page_icon='🔎')
 
 KEY = st.secrets["KEY"]
 ENDPOINT = st.secrets['ENDPOINT']
