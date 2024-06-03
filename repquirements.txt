@@ -1,0 +1,6 @@
+streamlit
+streamlit_cropper
+yfinance
+azure-cognitiveservices-vision-computervision
+msrest
+Pillow
